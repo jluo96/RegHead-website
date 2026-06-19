@@ -116,13 +116,9 @@
 <section class="section" id="abstract">
   <div class="wrap">
     <div class="kicker">Abstract</div>
-    <h2 class="h">Overview <span class="placeholder-pill">placeholder text</span></h2>
+    <h2 class="h">Overview </h2>
     <p class="lead" style="margin-top:14px">
-      RegHead registers blendshapes for non-humanoid heads with a single feed-forward pass.
-      <em>This abstract is a placeholder</em> — replace it with the camera-ready text. To support
-      this regime we release a large, expression-aligned image dataset: every identity is rendered
-      in the same ten expressions, giving paired cross-expression supervision for a fixed identity.
-      The interactive figure above is built directly from real samples in the dataset.
+      We present RegHead, a framework for constructing semantic blendshape sets for animatable non-humanoid head avatars. With a fixed expression vocabulary, semantic blendshapes provide a low-dimensional and interpretable animation interface and support cross-identity retargeting. Building such blendshape sets remains expensive because (i) expression-consistent supervision is scarce, (ii) generated 4D assets typically lack correspondence, and (iii) facial motion is highly localized. We propose (1) a large-scale dataset of non-humanoid identities paired with a shared expression vocabulary, obtained by expanding a small artist-rigged library via fine-tuned image editing; (2) a dense stochastic anchor motion representation tailored to localized facial deformations; and (3) a fast feed-forward registration model that converts unregistered expression meshes into a corresponded blendshape basis by predicting anchor-based deformations from the neutral shape. Experiments show that our approach produces higher-fidelity expression meshes than baselines, while running orders of magnitude faster than optimization. We further demonstrate real-time retargeting from human face tracking signals to non-humanoid characters, capturing both head pose and localized facial motions.
     </p>
   </div>
 </section>
@@ -253,7 +249,7 @@ ds = wds.WebDataset(urls).decode(<span class="s">"pil"</span>).map(parse)   <spa
 <section class="section" id="method">
   <div class="wrap">
     <div class="kicker">Method</div>
-    <h2 class="h">Feed-forward registration <span class="placeholder-pill">placeholder</span></h2>
+    <h2 class="h">Feed-forward registration </h2>
     <p class="lead" style="margin-top:12px">Drop the method overview figure and description here for the camera-ready.</p>
     <div class="ph" style="margin-top:24px">
       <div class="big">Method / architecture figure</div>
