@@ -5,14 +5,24 @@
   "use strict";
 
   const IDENTITIES = [
-    { id: "id000", name: "Doberman",        style: "Photorealistic" },
-    { id: "id001", name: "Polar Bear",      style: "Photorealistic" },
-    { id: "id004", name: "Pug",             style: "Video Game NPC" },
-    { id: "id006", name: "Bison",           style: "Plastic Toy" },
-    { id: "id009", name: "Giant Anteater",  style: "DreamWorks 3D" },
-    { id: "id016", name: "Bald Eagle",      style: "Video Game NPC" },
-    { id: "id018", name: "Chameleon",       style: "Plastic Toy" },
-    { id: "id019", name: "Capuchin Monkey", style: "DreamWorks 3D" }
+    { id: "id000", name: "Doberman Dog",     style: "Photorealistic" },
+    { id: "id001", name: "Polar Bear",       style: "Photorealistic" },
+    { id: "id002", name: "Cormorant",        style: "Photorealistic" },
+    { id: "id003", name: "Mole",             style: "Photorealistic" },
+    { id: "id004", name: "Pug Dog",          style: "Video Game NPC" },
+    { id: "id005", name: "Antelope",         style: "Photorealistic" },
+    { id: "id006", name: "Bison",            style: "Plastic Toy" },
+    { id: "id007", name: "Owl",              style: "Photorealistic" },
+    { id: "id008", name: "Reindeer",         style: "Photorealistic" },
+    { id: "id009", name: "Giant Anteater",   style: "DreamWorks 3D" },
+    { id: "id011", name: "Wombat",           style: "Video Game NPC" },
+    { id: "id012", name: "Swan",             style: "Plastic Toy" },
+    { id: "id014", name: "Anaconda",         style: "Video Game NPC" },
+    { id: "id016", name: "Bald Eagle",       style: "Video Game NPC" },
+    { id: "id017", name: "Tuna",             style: "DreamWorks 3D" },
+    { id: "id018", name: "Chameleon",        style: "Plastic Toy" },
+    { id: "id019", name: "Capuchin Monkey",  style: "DreamWorks 3D" },
+    { id: "id025", name: "African Elephant", style: "DreamWorks 3D" }
   ];
 
   // ordered as a smooth morph: mouth closes -> eyes close -> expressions
@@ -58,6 +68,23 @@
     grid.appendChild(tile);
   });
   const tiles = Array.prototype.slice.call(grid.querySelectorAll(".tile"));
+
+  // ---- horizontal filmstrip arrows ----
+  const arrL = document.getElementById("arrL");
+  const arrR = document.getElementById("arrR");
+  function scrollByTiles(dir) {
+    const tw = tiles.length ? tiles[0].getBoundingClientRect().width + 18 : 280;
+    grid.scrollBy({ left: dir * tw * 2, behavior: "smooth" });
+  }
+  function updateArrows() {
+    const max = grid.scrollWidth - grid.clientWidth - 2;
+    if (arrL) arrL.classList.toggle("hidden", grid.scrollLeft <= 2);
+    if (arrR) arrR.classList.toggle("hidden", grid.scrollLeft >= max);
+  }
+  if (arrL) arrL.addEventListener("click", function () { scrollByTiles(-1); });
+  if (arrR) arrR.addEventListener("click", function () { scrollByTiles(1); });
+  grid.addEventListener("scroll", updateArrows, { passive: true });
+  window.addEventListener("resize", updateArrows);
 
   // ---- build slider ticks ----
   EXPRESSIONS.forEach(function (ex, i) {
@@ -123,5 +150,6 @@
   }
 
   setExpr(0);
+  updateArrows();
   play();
 })();
