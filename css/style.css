@@ -83,17 +83,18 @@ h2.h{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;margin:0 0 6px;font-we
 /* horizontal filmstrip of identities */
 .strip-shell{position:relative;width:100%}
 .hero-strip{
-  display:flex;gap:18px;width:100%;overflow-x:auto;overflow-y:hidden;
-  scroll-snap-type:x proximity;padding:8px 6px 14px;
+  display:flex;gap:16px;width:100%;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x proximity;padding:8px 6px 14px;cursor:grab;
   scrollbar-width:thin;scrollbar-color:#c7cbe0 transparent;
   -webkit-overflow-scrolling:touch;
 }
+.hero-strip.drag{cursor:grabbing;scroll-snap-type:none}
 .hero-strip::-webkit-scrollbar{height:8px}
 .hero-strip::-webkit-scrollbar-thumb{background:#c7cbe0;border-radius:999px}
 .hero-strip::-webkit-scrollbar-track{background:transparent}
 .tile{
-  position:relative;flex:0 0 clamp(208px,24vw,288px);aspect-ratio:1/1;
-  scroll-snap-align:center;border-radius:16px;overflow:hidden;
+  position:relative;flex:0 0 clamp(150px,19vw,184px);aspect-ratio:1/1;
+  scroll-snap-align:center;border-radius:14px;overflow:hidden;
   background:#fff;box-shadow:var(--shadow-md);border:1px solid var(--line);
 }
 /* edge arrows */

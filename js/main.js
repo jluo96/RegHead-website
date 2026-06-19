@@ -69,22 +69,40 @@
   });
   const tiles = Array.prototype.slice.call(grid.querySelectorAll(".tile"));
 
-  // ---- horizontal filmstrip arrows ----
+  // ---- horizontal filmstrip: arrows + drag-to-scroll ----
   const arrL = document.getElementById("arrL");
   const arrR = document.getElementById("arrR");
   function scrollByTiles(dir) {
-    const tw = tiles.length ? tiles[0].getBoundingClientRect().width + 18 : 280;
-    grid.scrollBy({ left: dir * tw * 2, behavior: "smooth" });
+    const tw = tiles.length ? tiles[0].getBoundingClientRect().width + 16 : 200;
+    grid.scrollBy({ left: dir * tw * 3, behavior: "smooth" });
   }
   function updateArrows() {
-    const max = grid.scrollWidth - grid.clientWidth - 2;
-    if (arrL) arrL.classList.toggle("hidden", grid.scrollLeft <= 2);
-    if (arrR) arrR.classList.toggle("hidden", grid.scrollLeft >= max);
+    const max = grid.scrollWidth - grid.clientWidth;
+    const scrollable = max > 4;
+    if (arrL) arrL.classList.toggle("hidden", !scrollable || grid.scrollLeft <= 2);
+    if (arrR) arrR.classList.toggle("hidden", !scrollable || grid.scrollLeft >= max - 2);
   }
   if (arrL) arrL.addEventListener("click", function () { scrollByTiles(-1); });
   if (arrR) arrR.addEventListener("click", function () { scrollByTiles(1); });
   grid.addEventListener("scroll", updateArrows, { passive: true });
   window.addEventListener("resize", updateArrows);
+  window.addEventListener("load", updateArrows);
+  requestAnimationFrame(updateArrows);
+  setTimeout(updateArrows, 400);
+
+  // click-and-drag to scroll (so a plain mouse works, not just trackpad/arrows)
+  let dragging = false, dragStartX = 0, dragStartScroll = 0;
+  grid.addEventListener("pointerdown", function (e) {
+    dragging = true; dragStartX = e.clientX; dragStartScroll = grid.scrollLeft;
+    grid.classList.add("drag");
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!dragging) return;
+    grid.scrollLeft = dragStartScroll - (e.clientX - dragStartX);
+  });
+  window.addEventListener("pointerup", function () {
+    dragging = false; grid.classList.remove("drag");
+  });
 
   // ---- build slider ticks ----
   EXPRESSIONS.forEach(function (ex, i) {
