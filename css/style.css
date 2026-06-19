@@ -93,7 +93,7 @@ h2.h{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;margin:0 0 6px;font-we
 .hero-strip::-webkit-scrollbar-thumb{background:#c7cbe0;border-radius:999px}
 .hero-strip::-webkit-scrollbar-track{background:transparent}
 .tile{
-  position:relative;flex:0 0 clamp(150px,19vw,184px);aspect-ratio:1/1;
+  position:relative;flex:0 0 clamp(180px,24vw,244px);aspect-ratio:1/1;
   scroll-snap-align:center;border-radius:14px;overflow:hidden;
   background:#fff;box-shadow:var(--shadow-md);border:1px solid var(--line);
 }
@@ -246,6 +246,13 @@ table.cmp .hi{font-weight:800}
 .code .c{color:#7c87a3}
 .code .k{color:#c4b5ff}
 .code .s{color:#9ce3b0}
+
+/* method figures */
+.figure{margin:0 0 36px}
+.figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);
+  box-shadow:var(--shadow-md);background:#fff}
+.figure figcaption{color:var(--muted);font-size:14.5px;line-height:1.62;margin:16px auto 0;max-width:980px;text-align:justify}
+.figure figcaption .fnum{color:var(--ink);font-weight:800}
 
 /* placeholder boxes */
 .ph{border:2px dashed #d6dae6;border-radius:var(--radius);background:

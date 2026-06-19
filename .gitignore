@@ -1,0 +1,2 @@
+# source PDFs (rasterized PNGs are committed instead)
+assets/*.pdf

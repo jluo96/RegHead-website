@@ -21,8 +21,7 @@
     { id: "id016", name: "Bald Eagle",       style: "Video Game NPC" },
     { id: "id017", name: "Tuna",             style: "DreamWorks 3D" },
     { id: "id018", name: "Chameleon",        style: "Plastic Toy" },
-    { id: "id019", name: "Capuchin Monkey",  style: "DreamWorks 3D" },
-    { id: "id025", name: "African Elephant", style: "DreamWorks 3D" }
+    { id: "id019", name: "Capuchin Monkey",  style: "DreamWorks 3D" }
   ];
 
   // ordered as a smooth morph: mouth closes -> eyes close -> expressions
