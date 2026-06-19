@@ -299,121 +299,43 @@ ds = wds.WebDataset(urls).decode(<span class="s">"pil"</span>).map(parse)   <spa
   <div class="wrap">
     <div class="kicker">Results</div>
     <h2 class="h">Qualitative results</h2>
-    <p class="lead" style="margin-top:12px">All results below are produced by RegHead. Videos autoplay (muted) when they scroll into view.</p>
+    <p class="lead" style="margin-top:12px">All results below are produced by <b>RegHead</b>. Each clip pairs the input with our output (baselines cropped out). Videos autoplay, muted, when scrolled into view.</p>
 
     <h3 style="margin:38px 0 4px;font-size:21px;font-weight:800;letter-spacing:-.01em">Neutral &rarr; target interpolation</h3>
     <p class="note" style="margin-top:0">Linear interpolation in the registered blendshape basis, morphing the neutral shape toward each target expression.</p>
-    <h3 class="vid-sub">Neutral &rarr; <span class="tgt">Closed mouth · open eyes</span></h3>
     <div class="vid-list">
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/mouth_closed/African_Lion_Plastic_Toy_Render_arched_eyebrows_a_gaming_headset_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>African Lion</b> <span class="vstyle">Plastic Toy</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/interp_mouth_closed.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Neutral &rarr; Closed mouth, open eyes.</b> Each identity is shown as an <i>input</i> / <i>ours</i> pair, left to right: African Lion, Bald Eagle, Chihuahua Dog.</figcaption>
       </figure>
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/mouth_closed/Bald_Eagle_DreamWorks_Style_3D_heart_shaped_face_a_headset_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Bald Eagle</b> <span class="vstyle">DreamWorks 3D</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/interp_closed_eye.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Neutral &rarr; Closed mouth, closed eyes.</b> Each identity is shown as an <i>input</i> / <i>ours</i> pair, left to right: Alligator, Barracuda, Beaver.</figcaption>
       </figure>
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/mouth_closed/Chihuahua_Dog_DreamWorks_Style_3D_feather_crest_a_pumpkin_hat_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Chihuahua Dog</b> <span class="vstyle">DreamWorks 3D</span></figcaption>
-      </figure>
-    </div>
-    <h3 class="vid-sub">Neutral &rarr; <span class="tgt">Closed mouth · closed eyes</span></h3>
-    <div class="vid-list">
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/closed_eye/Alligator_Plastic_Toy_Render_round_eyes_a_pearl_necklace_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Alligator</b> <span class="vstyle">Plastic Toy</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/interp_smile.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Neutral &rarr; Smile.</b> Each identity is shown as an <i>input</i> / <i>ours</i> pair, left to right: Lynx, Mongoose, Parrot.</figcaption>
       </figure>
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/closed_eye/Barracuda_Video_Game_NPC_Style_large_eyes_a_headset_microphone____a_beret_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Barracuda</b> <span class="vstyle">Video Game NPC</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/closed_eye/Beaver_DreamWorks_Style_3D_furry_ears_a_bluetooth_earpiece_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Beaver</b> <span class="vstyle">DreamWorks 3D</span></figcaption>
-      </figure>
-    </div>
-    <h3 class="vid-sub">Neutral &rarr; <span class="tgt">Smile</span></h3>
-    <div class="vid-list">
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/smile/Lynx_Photorealistic_spiky_fur_a_wreath_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Lynx</b> <span class="vstyle">Photorealistic</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/smile/Mongoose_DreamWorks_Style_3D_soft_muzzle_a_hoodie____a_headset_microphone_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Mongoose</b> <span class="vstyle">DreamWorks 3D</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/smile/Parrot_Plastic_Toy_Render_wavy_fur_a_gaming_headset_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Parrot</b> <span class="vstyle">Plastic Toy</span></figcaption>
-      </figure>
-    </div>
-    <h3 class="vid-sub">Neutral &rarr; <span class="tgt">Frown</span></h3>
-    <div class="vid-list">
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/frown/Mouse_Video_Game_NPC_Style_big_nose_a_top_hat_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Mouse</b> <span class="vstyle">Video Game NPC</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/frown/Orangutan_DreamWorks_Style_3D_head_crest_a_headset_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Orangutan</b> <span class="vstyle">DreamWorks 3D</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/frown/Pelican_Plastic_Toy_Render_curly_fur_a_beret____a_bluetooth_earpiece_1_interp_grid_crop.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Pelican</b> <span class="vstyle">Plastic Toy</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/interp_frown.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Neutral &rarr; Frown.</b> Each identity is shown as an <i>input</i> / <i>ours</i> pair, left to right: Mouse, Orangutan, Pelican.</figcaption>
       </figure>
     </div>
 
     <h3 style="margin:48px 0 4px;font-size:21px;font-weight:800;letter-spacing:-.01em">Retargeting</h3>
-    <p class="note" style="margin-top:0">Real-time retargeting from human face-tracking signals to non-humanoid characters, transferring head pose and localized facial motion.</p>
+    <p class="note" style="margin-top:0">Real-time retargeting from a human face-tracking signal to non-humanoid characters, transferring head pose and localized facial motion.</p>
     <div class="vid-list">
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Lemur_Video_Game_NPC_Style_extra_big_head_a_superhero_mask_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Lemur</b> <span class="vstyle">Video Game NPC</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/retarget_input1.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Input 1.</b> Leftmost is the driving human performance; the remaining three are our real-time retargeting to Maine Coon, Mole, Prairie DogCockatoo.</figcaption>
       </figure>
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Maine_Coon_Video_Game_NPC_Style_large_eyes_a_crown____a_headset_microphone_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Maine Coon</b> <span class="vstyle">Video Game NPC</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/retarget_input2.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Input 2.</b> Leftmost is the driving human performance; the remaining three are our real-time retargeting to Maltese Dog, Mouse, Musk Ox.</figcaption>
       </figure>
       <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Maltese_Dog_DreamWorks_Style_3D_tiny_horns_a_tiara____a_helmet_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Maltese Dog</b> <span class="vstyle">DreamWorks 3D</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Maltese_Dog_Plastic_Toy_Render_crown_like_fur_tuft_a_crown_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Maltese Dog</b> <span class="vstyle">Plastic Toy</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Mole_Video_Game_NPC_Style_bushy_eyebrows_a_laurel_crown_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Mole</b> <span class="vstyle">Video Game NPC</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Mouse_Plastic_Toy_Render_extra_big_head_a_bow_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Mouse</b> <span class="vstyle">Plastic Toy</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Mouse_Video_Game_NPC_Style_big_nose_a_top_hat_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Mouse</b> <span class="vstyle">Video Game NPC</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Mouse_Video_Game_NPC_Style_soft_muzzle_a_graduation_cap_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Mouse</b> <span class="vstyle">Video Game NPC</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Musk_Ox_Plastic_Toy_Render_head_crest_a_bow____a_bandanna_around_the_neck_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Musk Ox</b> <span class="vstyle">Plastic Toy</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Ocelot_Photorealistic_cute_dimples_a_party_hat_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Ocelot</b> <span class="vstyle">Photorealistic</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Poodle_Plastic_Toy_Render_curved_horns_a_baseball_cap_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Poodle</b> <span class="vstyle">Plastic Toy</span></figcaption>
-      </figure>
-      <figure class="vid">
-        <video class="lazyvid" data-src="assets/supp/files/videos/retargeting/Prairie_DogCockatoo_Plastic_Toy_Render_bushy_eyebrows_a_wreath_1.mp4" muted loop playsinline preload="none"></video>
-        <figcaption><b>Prairie DogCockatoo</b> <span class="vstyle">Plastic Toy</span></figcaption>
+        <video class="lazyvid" data-src="assets/supp/processed/retarget_input3.mp4" muted loop playsinline preload="none"></video>
+        <figcaption><b>Input 3.</b> Leftmost is the driving human performance; the remaining three are our real-time retargeting to Lemur, Mouse, Poodle.</figcaption>
       </figure>
     </div>
   </div>

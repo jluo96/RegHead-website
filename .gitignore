@@ -1,12 +1,7 @@
 # source PDFs (rasterized PNGs are committed instead)
 assets/*.pdf
-# unused supplemental helper files (only the referenced videos are needed)
+# raw supplemental grids + helper files — only the cropped clips in assets/supp/processed/ are used
+assets/supp/files/
 assets/supp/animations.html
-assets/supp/files/*.js
-assets/supp/files/*.css
-assets/supp/files/.DS_Store
-# interpolation expressions intentionally not shown on the site
-assets/supp/files/videos/mouth_open/
-assets/supp/files/videos/half_eye/
 # misc
 **/.DS_Store
