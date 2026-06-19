@@ -169,4 +169,25 @@
   setExpr(0);
   updateArrows();
   play();
+
+  // ---- lazy-load + play result videos only while on screen ----
+  const lvids = Array.prototype.slice.call(document.querySelectorAll("video.lazyvid"));
+  if (lvids.length) {
+    if ("IntersectionObserver" in window) {
+      const vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          const v = en.target;
+          if (en.isIntersecting) {
+            if (!v.src && v.dataset.src) v.src = v.dataset.src;
+            const p = v.play(); if (p && p.catch) p.catch(function () {});
+          } else {
+            v.pause();
+          }
+        });
+      }, { rootMargin: "300px 0px", threshold: 0.15 });
+      lvids.forEach(function (v) { vio.observe(v); });
+    } else {
+      lvids.forEach(function (v) { if (v.dataset.src) v.src = v.dataset.src; });
+    }
+  }
 })();
